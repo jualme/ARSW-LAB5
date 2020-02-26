@@ -1,10 +1,32 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
+<html>
+	<head>
+    <title>Blueprints</title>
     <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <LINK REL=StyleSheet HREF="style.css" TYPE="text/css" MEDIA=screen>
 
-</body>
+    <script src="/webjars/jquery/3.1.0/jquery.min.js"></script>
+    <script src="/webjars/bootstrap/4.1.2/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="/webjars/bootstrap/4.1.2/css/bootstrap.min.css" />
+    <body>
+    	<h1 style="background-color:DodgerBlue;"> Blueprints </h1>
+    	<label for="username">Author &nbsp;&nbsp;&nbsp; </label>
+    	<input type="text" id="author" name="author"> <label> &nbsp;&nbsp;&nbsp; </label>
+	    <button type="button"> Get blueprints </button> 
+	    <h2> JohnConnor's blueprints: </h2>
+	    <table id="t01">
+		 	<tr>
+		   		<th> Blueprint name </th>
+		    	<th> Number of points </th> 
+		   		<th> <button type="button"> Open </button> </th>
+		 	</tr>
+		  	<tr>
+		    	<td>Jill</td>
+		    	<td>233</td>
+			    <td> <button type="button"> Open </button> </td>
+		  	</tr>		  	
+		</table>
+		<h2> Total user points: 575 </h2>
+    </body>
 </html>
