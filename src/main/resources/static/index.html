@@ -24,26 +24,47 @@
     	<h1 style="background-color:DodgerBlue;"> Blueprints </h1>
     	<div class="input-group mb-3" style = "width:1000px;">
     		<label for="username" style = "font-family:'Playfair Display';"> Author: &nbsp;&nbsp; </label>
-			<input type="text" class="form-control" placeholder="Enter Name" aria-label="Enter Name" aria-describedby="basic-addon2" style = "width:10%;">
+			<input id = "idEnterName" type="text" class="form-control" placeholder="Enter Name" aria-label="Enter Name" aria-describedby="basic-addon2" style = "width:10%;">
 			<div class="input-group-append">
-		    <button class="btn btn-outline-secondary" type="button" style = "width:320px;">Get blueprints</button>
+		    <button class="btn btn-outline-secondary" type="button" style = "width:320px;" onclick="app.updatePlanes(document.getElementById('idEnterName').value)"> Get blueprints </button>
 		 	</div>
 		</div>
 	    
 	    <h2> JohnConnor's blueprints: </h2>
+	    <div id = "idTable"> </div>
+		<div id ="idGetSum" style = "font-family:'Playfair Display';"> </div>
 
-	    <table id="t01">
-		 	<tr>
-		   		<th> Blueprint name </th>
-		    	<th> Number of points </th> 
-		   		<th> <button type="button"> Open </button> </th>
-		 	</tr>
-		  	<tr>
-		    	<td>Jill</td>
-		    	<td>233</td>
-			    <td> <button type="button"> Open </button> </td>
-		  	</tr>		  	
-		</table>
-		<h2> Total user points: 575 </h2>
+		<div style = "align-items: center;">			
+		<table class="table"  >
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">First</th>
+      <th scope="col">Last</th>
+      <th scope="col">Handle</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">1</th>
+      <td>Mark</td>
+      <td>Otto</td>
+      <td>@mdo</td>
+    </tr>
+    <tr>
+      <th scope="row">2</th>
+      <td>Jacob</td>
+      <td>Thornton</td>
+      <td>@fat</td>
+    </tr>
+    <tr>
+      <th scope="row">3</th>
+      <td>Larry</td>
+      <td>the Bird</td>
+      <td>@twitter</td>
+    </tr>
+  </tbody>
+</table>
+</div>
     </body>
 </html>
