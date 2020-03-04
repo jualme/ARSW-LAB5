@@ -41,6 +41,7 @@ var app = (function () {
 						var name = $("#blueName");
 						name.text(plano.name);
 						let ctx = canvas.getContext("2d");
+						ctx.beginPath();
 						ctx.clearRect(0,0,canvas.width,canvas.height);
 						let figure = blues.find(blue => blue.name === plano.name)
 						figure.points.forEach( (point , i ) => {
