@@ -1,5 +1,12 @@
 # ARSW-LAB5
 
+## Members 
+- **Juan Alberto Mejía Schuster**
+- **Johann Sebastian Páez Campos**
+
+## Run
+gradle bootrun
+
 ## Description
 
 ![](https://github.com/jualme/ARSW-LAB5/blob/master/img/mock.png)
@@ -65,3 +72,15 @@ index.html
   - On any of the two listings (the original, or the one transformed by map), apply a reduce that calculates the number of points. With this value, use jQuery to update the corresponding field within the DOM.
 - Associate the previously created operation (that of app.js) with the on-click event of the page query button.
 - Verify the operation of the application. Start the server, open the HTML5/JavaScript application, and rectify that when entering an existing user, the list of the same is loaded.
+
+
+# Next Week
+
+- To the page, add an element of type Canvas, with its respective identifier. Make your dimensions not too large to make room for the other components, but enough to be able to draw the plans.
+- To the app.js module add an operation that, given the name of an author, and the name of one of its planes given as parameters, using the getBlueprintsByNameAndAuthor method of apimock.js and a callback function:
+   - Consult the points of the corresponding plane, and with them, draw straight line segments, using the available HTML5 elements (Canvas, 2DContext, etc.)Update the field with jQuery where the name of the plane being drawn is shown (if that field does not exist, group it to the DOM). 
+- Verify that the application now, in addition to displaying the list of the plans of an author, allows you to select one of these and graph it. To do this, have the button generated with the click event associated with the operation done in the last column (sending the corresponding names as a parameter).
+- Verify that the application now allows: consult the plans of an author and graph the one selected.
+- Once the application works (front-end only), make a module (call it apiclient) that has the same operations of the apimock, but for the same use real data consulted from the REST API. For the above, review how to make GET requests with jQuery, and how the callback scheme is handled in this context.
+- Modify the app.js code so that it is possible to switch between the apimock and the apiclient with just one line of code.
+- Review the documentation and examples of Bootstrap styles (already included in the exercise), add the necessary elements to the page to make it more colorful, and closer to the mock given at the beginning of the statement.
