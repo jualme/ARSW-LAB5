@@ -29,10 +29,21 @@
 		    <button class="btn btn-outline-secondary" type="button" style = "width:320px;" onclick="app.updatePlanes(document.getElementById('idEnterName').value)"> Get blueprints </button>
 		 	</div>
 		</div>
-	    
-	    <h2> JohnConnor's blueprints: </h2>
-	    <div id = "idTable"> </div>
-		<div id ="idGetSum" style = "font-family:'Playfair Display';"> </div>
+
+        <div style="display: flex; flex-wrap: wrap">
+            <div>
+                <h2> JohnConnor's blueprints: </h2>
+                <div id = "idTable"> </div>
+                <div id ="idGetSum" style = "font-family:'Playfair Display';"> </div>
+            </div>
+            <div>
+                <div>
+                    <h2>Current Blueprint: </h2>
+                    <h2 id="blueName"></h2>
+                </div>
+                <canvas id="canvasId" width="200" height="200"></canvas>
+            </div>
+        </div>
 
 		<div style = "align-items: center;">			
 		<table class="table"  >

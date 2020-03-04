@@ -1,10 +1,12 @@
 var app = (function () {
 	var nombreAutor = "";		
-	var planos = [];	
+	var planos = [];
+	var blues = [];
 	var callBack = function(error, datos) {
 		if (error != null) {
 			return;
 		}
+		blues = datos;
 		planos = datos.map(function(blueprint) {
 			return {
 				name: blueprint.name,
@@ -26,13 +28,28 @@ var app = (function () {
 							"</tr>" +
 						"</thead>" +
 						"<tbody>";
-		planos.forEach(function(plano) {
+		planos.forEach(function(plano, i) {
+			let butId = plano.name+i;
 			tabla += "<tr>" +
 						"<td>" + plano.name + "</td>" +
 						"<td>" + plano.puntos + "</td>" +
-						"<td> <button type='button' class='btn btn-secondary btn-sm'> Open </button> </td>" +
+						"<td> <button id='"+butId+"' type='button' class='btn btn-secondary btn-sm'> Open </button> </td>" +
 					"</tr>";
-		});
+					$(document).on("click", "#"+butId, function() {
+						var canvas = $("#canvasId")[0];
+						let ctx = canvas.getContext("2d");
+						ctx.clearRect(0,0,canvas.width,canvas.height);
+						let figure = blues.find(blue => blue.name === plano.name)
+						figure.points.forEach( (point , i ) => {
+							if (i === 0) {
+								ctx.moveTo(point.x, point.y);
+							} else {
+								ctx.lineTo(point.x, point.y);
+							}
+							ctx.stroke();
+						})
+					})
+			});
 		tabla += "</tbody> </table>";
 		return tabla;
 	}
@@ -41,8 +58,7 @@ var app = (function () {
 		return total + blueprint.puntos;
 	}
 	
-	return {
-        setNameAuthor: function(author) {
+	return {       setNameAuthor: function(author) {
             nombreAutor = author;
         },        
         updatePlanes: function(author) {
