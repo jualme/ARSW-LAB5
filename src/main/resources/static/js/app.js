@@ -2,6 +2,7 @@ var app = (function () {
 	var nombreAutor = "";		
 	var planos = [];
 	var blues = [];
+	var cambiarApi = apimock;
 	var callBack = function(error, datos) {
 		if (error != null) {
 			return;
@@ -17,7 +18,7 @@ var app = (function () {
 		$("#idTable").html(stringTable);
 		var getSum = planos.reduce(sumTotalPoints, 0);
 		$("#idGetSum").text("Total user points: " + getSum);
-		$("#blueprintName").append((datos[0]).author);
+		$("#blueprintName").text((datos[0]).author);
 	}
 	var table = function() {
 		var tabla = "<table class='table' style = 'width:500px; align-content:center;'>" +
@@ -62,11 +63,12 @@ var app = (function () {
 		return total + blueprint.puntos;
 	}
 	
-	return {       setNameAuthor: function(author) {
+	return {       
+		    setNameAuthor: function(author) {
             nombreAutor = author;
         },        
         updatePlanes: function(author) {
-        	var Blueprint = apimock.getBlueprintsByAuthor(author, callBack); 
+        	var Blueprint = cambiarApi.getBlueprintsByAuthor(author, callBack); 
         }        
     }	
 })();

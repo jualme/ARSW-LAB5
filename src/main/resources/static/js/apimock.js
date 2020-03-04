@@ -50,6 +50,40 @@ var apimock = (function () {
             ]
         }
     ]
+	mockdata["William"] = [
+        {
+            author: "William",
+            name: "room",
+            points: [
+                {
+                    x: 10,
+                    y: 30
+                },
+                {
+                    x: 40,
+                    y: 60
+                },
+                {
+                    x: 50,
+                    y: 100
+                }
+            ]
+        },
+        {
+            author: "William",
+            name: "mouse",
+            points: [
+                {
+                    x: 30,
+                    y: 50
+                },
+                {
+                    x: 10,
+                    y: 50
+                }
+            ]
+        }
+    ]
     return {
         getBlueprintsByAuthor: function(author, callback) {
             callback(null, mockdata[author]);
