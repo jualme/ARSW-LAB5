@@ -17,6 +17,7 @@ var app = (function () {
 		$("#idTable").html(stringTable);
 		var getSum = planos.reduce(sumTotalPoints, 0);
 		$("#idGetSum").text("Total user points: " + getSum);
+		$("#blueprintName").append((datos[0]).author);
 	}
 	var table = function() {
 		var tabla = "<table class='table' style = 'width:500px; align-content:center;'>" +
@@ -37,6 +38,8 @@ var app = (function () {
 					"</tr>";
 					$(document).on("click", "#"+butId, function() {
 						var canvas = $("#canvasId")[0];
+						var name = $("#blueName");
+						name.text(plano.name);
 						let ctx = canvas.getContext("2d");
 						ctx.clearRect(0,0,canvas.width,canvas.height);
 						let figure = blues.find(blue => blue.name === plano.name)
